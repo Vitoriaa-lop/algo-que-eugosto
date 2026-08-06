@@ -1,0 +1,133 @@
+/* Configurações Gerais e Fontes */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: #fdfbf7; /* Tom de papel levemente amarelado */
+  color: #4a443f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+  padding: 40px 20px;
+}
+
+/* Cabeçalho */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 3.2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #3b3531;
+}
+
+.header .subtitle {
+  font-style: italic;
+  color: #8c827a;
+  margin-top: 5px;
+}
+
+/* Layout Flexbox com Centralização (3 em cima, 2 em baixo no centro) */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  z-index: 1;
+}
+
+/* Molduras Arredondadas e Orgânicas */
+.butterfly-card {
+  background: #ffffff;
+  padding: 8px;
+  width: calc(33.333% - 20px);
+  min-width: 280px;
+  max-width: 340px;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: 2px solid #bda897;
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+}
+
+.butterfly-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-border {
+  border: 1px dashed #d1c4b9;
+  border-radius: 240px 20px 210px 20px/20px 210px 20px 240px;
+  padding: 25px 20px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ícones decorativos */
+.butterfly-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: inline-block;
+  filter: sepia(0.2) drop-shadow(2px 2px 3px rgba(0,0,0,0.08));
+}
+
+.butterfly-card h2 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin-bottom: 8px;
+  color: #3b3531;
+}
+
+.butterfly-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #6e655f;
+}
+
+/* Ilustração Decorativa Floral de Fundo */
+.bottom-left-flower {
+  position: fixed;
+  bottom: -40px;
+  left: -40px;
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #d1c4b9;
+  border-radius: 50%;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.bottom-left-flower::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 240px;
+  height: 240px;
+  border: 1px dotted #bda897;
+  border-radius: 50%;
+}
+
+/* Rodapé */
+.footer {
+  margin-top: 50px;
+  font-size: 0.85rem;
+  color: #a3988e;
+  text-align: center;
+}
