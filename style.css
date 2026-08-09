@@ -28,34 +28,66 @@ body {
   padding: 60px 20px;
 }
 
-/* --- DETALHES DE PINCELADA VERDE NAS BORDAS --- */
+/* =========================================================
+   EFETIVO DE PINCELADAS DE AQUARELA (BORDAS ORGANICAS)
+   ========================================================= */
+
 .brush-stroke {
   position: fixed;
   pointer-events: none;
   z-index: 0;
-  background: conic-gradient(from 180deg at 50% 50%, var(--green-dark), var(--green-brush), var(--green-soft), var(--green-dark));
-  filter: blur(20px);
-  opacity: 0.7;
+  mix-blend-mode: multiply; /* Simula a absorção de tinta no papel */
 }
 
+/* Pincelada Superior Esquerda */
 .top-left-brush {
-  top: -120px;
-  left: -120px;
+  top: -80px;
+  left: -80px;
+  width: 420px;
+  height: 420px;
+  background: 
+    radial-gradient(ellipse at 30% 30%, var(--green-dark) 0%, transparent 60%),
+    radial-gradient(ellipse at 60% 20%, var(--green-brush) 0%, transparent 65%),
+    radial-gradient(ellipse at 20% 60%, var(--green-medium) 0%, transparent 70%),
+    radial-gradient(ellipse at 50% 50%, var(--green-soft) 0%, transparent 75%);
+  filter: blur(12px) contrast(150%);
+  opacity: 0.75;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+  transform: rotate(-15deg);
+}
+
+/* Efeito de segunda camada de pincelada seca */
+.top-left-brush::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, var(--green-dark) 0%, transparent 60%);
+  border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%;
+  filter: blur(8px);
+  opacity: 0.6;
+}
+
+/* Pincelada Inferior Direita */
+.bottom-right-brush {
+  bottom: -90px;
+  right: -90px;
   width: 450px;
   height: 450px;
-  /* Formato irregular imitando pinceladas curvas de tintas */
-  clip-path: polygon(10% 0%, 100% 0%, 85% 35%, 65% 65%, 40% 90%, 0% 100%, 0% 30%);
+  background: 
+    radial-gradient(ellipse at 70% 70%, var(--green-dark) 0%, transparent 60%),
+    radial-gradient(ellipse at 40% 80%, var(--green-brush) 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 40%, var(--green-medium) 0%, transparent 70%),
+    radial-gradient(ellipse at 50% 50%, var(--green-soft) 0%, transparent 75%);
+  filter: blur(14px) contrast(140%);
+  opacity: 0.75;
+  border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+  transform: rotate(10deg);
 }
 
-.bottom-right-brush {
-  bottom: -140px;
-  right: -140px;
-  width: 480px;
-  height: 480px;
-  clip-path: polygon(30% 20%, 100% 0%, 100% 100%, 0% 100%, 15% 70%, 45% 50%);
-}
-
-/* Folhagens e Trepadeiras */
+/* Folhagens e Ramos SVG */
 .vine-decor {
   position: fixed;
   width: 220px;
@@ -68,7 +100,7 @@ body {
 .top-left-vine { top: 10px; left: 10px; }
 .bottom-right-vine { bottom: 10px; right: 10px; }
 
-/* --- ESTILO E ANIMAÇÃO DAS BORBOLETAS MODELO --- */
+/* --- BORBOLETAS FLUTUANTES --- */
 .floating-butterfly {
   position: fixed;
   width: 65px;
@@ -83,32 +115,11 @@ body {
   filter: drop-shadow(2px 5px 8px rgba(27, 61, 41, 0.35));
 }
 
-/* Posicionamento e Animações Rápidas nas Bordas */
-.b-1 {
-  top: 50px;
-  left: 60px;
-  animation: float1 7s ease-in-out infinite alternate;
-}
+.b-1 { top: 50px; left: 60px; animation: float1 7s ease-in-out infinite alternate; }
+.b-2 { top: 90px; right: 70px; animation: float2 8.5s ease-in-out infinite alternate; }
+.b-3 { bottom: 120px; left: 70px; animation: float3 8s ease-in-out infinite alternate; }
+.b-4 { bottom: 60px; right: 90px; animation: float4 6.5s ease-in-out infinite alternate; }
 
-.b-2 {
-  top: 90px;
-  right: 70px;
-  animation: float2 8.5s ease-in-out infinite alternate;
-}
-
-.b-3 {
-  bottom: 120px;
-  left: 70px;
-  animation: float3 8s ease-in-out infinite alternate;
-}
-
-.b-4 {
-  bottom: 60px;
-  right: 90px;
-  animation: float4 6.5s ease-in-out infinite alternate;
-}
-
-/* Movimento de Voo */
 @keyframes float1 {
   0% { transform: translate(0, 0) rotate(0deg) scale(1); }
   50% { transform: translate(35px, 40px) rotate(18deg) scale(1.1); }
@@ -165,7 +176,7 @@ body {
   margin: 15px auto 0 auto;
 }
 
-/* Cards em Grid Flexbox */
+/* Grid de Cards */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
