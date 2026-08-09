@@ -1,4 +1,15 @@
-/* Configurações Gerais e Fontes */
+/* Reset e Variáveis de Cores (Inspiradas na foto da aquarela) */
+:root {
+  --bg-cream: #fbf8f1;
+  --green-dark: #1e4630;
+  --green-medium: #2d5a3f;
+  --green-watercolor: #3d7052;
+  --green-soft: #8eb09b;
+  --gold-accent: #8b7d4b;
+  --text-color: #2b332c;
+  --white-translucent: rgba(255, 255, 255, 0.85);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,38 +17,84 @@
 }
 
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  background-color: #fdfbf7; /* Tom de papel levemente amarelado */
-  color: #4a443f;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   overflow-x: hidden;
-  padding: 40px 20px;
+  padding: 50px 20px;
+}
+
+/* Molduras/Manchas de Pincelada em Aquarela */
+.watercolor-frame {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.watercolor-frame.top-left {
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--green-medium) 0%, var(--green-soft) 40%, transparent 70%);
+  filter: blur(50px);
+  opacity: 0.45;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+}
+
+.watercolor-frame.bottom-right {
+  bottom: -120px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, var(--green-dark) 0%, var(--green-watercolor) 50%, transparent 75%);
+  filter: blur(60px);
+  opacity: 0.5;
+  border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
 }
 
 /* Cabeçalho */
 .header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  z-index: 1;
+}
+
+.leaf-icon {
+  font-size: 1.8rem;
+  opacity: 0.8;
 }
 
 .header h1 {
-  font-size: 3.2rem;
-  font-weight: 300;
-  letter-spacing: 2px;
-  color: #3b3531;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.8rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  letter-spacing: 3px;
+  margin: 5px 0;
 }
 
 .header .subtitle {
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  color: #8c827a;
-  margin-top: 5px;
+  font-size: 1.3rem;
+  color: var(--green-medium);
+  letter-spacing: 1px;
 }
 
-/* Layout Flexbox com Centralização (3 em cima, 2 em baixo no centro) */
+.divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+  margin: 15px auto 0 auto;
+}
+
+/* Layout dos Cards (Flexbox: 3 na primeira linha, 2 na segunda) */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -48,86 +105,65 @@ body {
   z-index: 1;
 }
 
-/* Molduras Arredondadas e Orgânicas */
+/* Card estilo Papel e Aquarela */
 .butterfly-card {
-  background: #ffffff;
-  padding: 8px;
+  background: var(--white-translucent);
+  backdrop-filter: blur(5px);
+  padding: 6px;
   width: calc(33.333% - 20px);
   min-width: 280px;
-  max-width: 340px;
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  border: 2px solid #bda897;
-  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 330px;
+  /* Bordas levemente orgânicas estilo aquarela */
+  border-radius: 180px 15px 160px 20px / 20px 150px 20px 170px;
+  border: 1px solid rgba(45, 90, 63, 0.25);
+  box-shadow: 0 10px 25px rgba(30, 70, 48, 0.07);
+  transition: all 0.4s ease;
   display: flex;
 }
 
 .butterfly-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  border-color: var(--green-medium);
+  box-shadow: 0 15px 30px rgba(30, 70, 48, 0.15);
 }
 
-.card-border {
-  border: 1px dashed #d1c4b9;
-  border-radius: 240px 20px 210px 20px/20px 210px 20px 240px;
-  padding: 25px 20px;
+.card-inner {
+  border: 1px dashed rgba(139, 125, 75, 0.4); /* Traço sutil dourado/oliva */
+  border-radius: 170px 10px 150px 15px / 15px 140px 15px 160px;
+  padding: 30px 20px;
   text-align: center;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-/* Ícones decorativos */
-.butterfly-icon {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  display: inline-block;
-  filter: sepia(0.2) drop-shadow(2px 2px 3px rgba(0,0,0,0.08));
+.card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 4px rgba(45, 90, 63, 0.15));
 }
 
 .butterfly-card h2 {
-  font-size: 1.3rem;
-  font-weight: normal;
-  margin-bottom: 8px;
-  color: #3b3531;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  margin-bottom: 10px;
 }
 
 .butterfly-card p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #6e655f;
-}
-
-/* Ilustração Decorativa Floral de Fundo */
-.bottom-left-flower {
-  position: fixed;
-  bottom: -40px;
-  left: -40px;
-  width: 200px;
-  height: 200px;
-  border: 2px dashed #d1c4b9;
-  border-radius: 50%;
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-.bottom-left-flower::after {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  width: 240px;
-  height: 240px;
-  border: 1px dotted #bda897;
-  border-radius: 50%;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #4a554d;
+  font-weight: 300;
 }
 
 /* Rodapé */
 .footer {
-  margin-top: 50px;
-  font-size: 0.85rem;
-  color: #a3988e;
-  text-align: center;
+  margin-top: 60px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--green-medium);
+  z-index: 1;
 }
