@@ -1,4 +1,4 @@
-/* Reset e Variáveis de Cores (Inspiradas na foto da aquarela) */
+/* Variáveis de Cores inspiradas na Aquarela */
 :root {
   --bg-cream: #fbf8f1;
   --green-dark: #1e4630;
@@ -7,7 +7,7 @@
   --green-soft: #8eb09b;
   --gold-accent: #8b7d4b;
   --text-color: #2b332c;
-  --white-translucent: rgba(255, 255, 255, 0.85);
+  --white-translucent: rgba(255, 255, 255, 0.88);
 }
 
 * {
@@ -26,43 +26,125 @@ body {
   align-items: center;
   position: relative;
   overflow-x: hidden;
-  padding: 50px 20px;
+  padding: 60px 20px;
 }
 
-/* Molduras/Manchas de Pincelada em Aquarela */
-.watercolor-frame {
+/* Molduras de Aquarela nas Bordas */
+.watercolor-border {
   position: fixed;
   pointer-events: none;
   z-index: 0;
 }
 
-.watercolor-frame.top-left {
-  top: -100px;
-  left: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, var(--green-medium) 0%, var(--green-soft) 40%, transparent 70%);
-  filter: blur(50px);
-  opacity: 0.45;
-  border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+.border-top-left {
+  top: -80px;
+  left: -80px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, var(--green-dark) 0%, var(--green-watercolor) 45%, transparent 70%);
+  filter: blur(45px);
+  opacity: 0.55;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
-.watercolor-frame.bottom-right {
-  bottom: -120px;
+.border-bottom-right {
+  bottom: -100px;
   right: -100px;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, var(--green-dark) 0%, var(--green-watercolor) 50%, transparent 75%);
-  filter: blur(60px);
-  opacity: 0.5;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, var(--green-medium) 0%, var(--green-soft) 50%, transparent 75%);
+  filter: blur(55px);
+  opacity: 0.6;
   border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+}
+
+/* Ilustrações de Ramos e Trepadeiras em SVG */
+.vine-decor {
+  position: fixed;
+  width: 220px;
+  height: 220px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.top-left-vine {
+  top: 10px;
+  left: 10px;
+}
+
+.bottom-right-vine {
+  bottom: 10px;
+  right: 10px;
+}
+
+/* --- ANIMAÇÃO DAS BORBOLETAS NAS BORDAS --- */
+.floating-butterfly {
+  position: fixed;
+  font-size: 2.2rem;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(2px 4px 6px rgba(30, 70, 48, 0.3));
+}
+
+/* Borboleta 1: Canto Superior Esquerdo */
+.b-1 {
+  top: 60px;
+  left: 50px;
+  animation: floatButterfly1 7s ease-in-out infinite alternate;
+}
+
+/* Borboleta 2: Canto Superior Direito */
+.b-2 {
+  top: 100px;
+  right: 70px;
+  animation: floatButterfly2 9s ease-in-out infinite alternate;
+}
+
+/* Borboleta 3: Canto Inferior Esquerdo */
+.b-3 {
+  bottom: 120px;
+  left: 60px;
+  animation: floatButterfly3 8s ease-in-out infinite alternate;
+}
+
+/* Borboleta 4: Canto Inferior Direito */
+.b-4 {
+  bottom: 70px;
+  right: 80px;
+  animation: floatButterfly4 6.5s ease-in-out infinite alternate;
+}
+
+/* Keyframes das Animações (Movimento de Voo e Bater de Asas) */
+@keyframes floatButterfly1 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate(30px, 40px) rotate(15deg) scale(1.1); }
+  100% { transform: translate(-10px, 70px) rotate(-10deg) scale(0.95); }
+}
+
+@keyframes floatButterfly2 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(0.9); }
+  50% { transform: translate(-40px, 30px) rotate(-20deg) scale(1.05); }
+  100% { transform: translate(-20px, 80px) rotate(10deg) scale(1); }
+}
+
+@keyframes floatButterfly3 {
+  0% { transform: translate(0, 0) rotate(5deg) scale(1.05); }
+  50% { transform: translate(50px, -30px) rotate(-15deg) scale(0.95); }
+  100% { transform: translate(20px, -60px) rotate(10deg) scale(1.1); }
+}
+
+@keyframes floatButterfly4 {
+  0% { transform: translate(0, 0) rotate(-10deg) scale(1); }
+  50% { transform: translate(-35px, -45px) rotate(15deg) scale(1.15); }
+  100% { transform: translate(-60px, -20px) rotate(-5deg) scale(0.9); }
 }
 
 /* Cabeçalho */
 .header {
   text-align: center;
   margin-bottom: 50px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .leaf-icon {
@@ -84,7 +166,6 @@ body {
   font-style: italic;
   font-size: 1.3rem;
   color: var(--green-medium);
-  letter-spacing: 1px;
 }
 
 .divider {
@@ -94,7 +175,7 @@ body {
   margin: 15px auto 0 auto;
 }
 
-/* Layout dos Cards (Flexbox: 3 na primeira linha, 2 na segunda) */
+/* Cards / Blocos */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -102,21 +183,19 @@ body {
   gap: 30px;
   width: 100%;
   max-width: 1100px;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* Card estilo Papel e Aquarela */
 .butterfly-card {
   background: var(--white-translucent);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
   padding: 6px;
   width: calc(33.333% - 20px);
   min-width: 280px;
   max-width: 330px;
-  /* Bordas levemente orgânicas estilo aquarela */
   border-radius: 180px 15px 160px 20px / 20px 150px 20px 170px;
   border: 1px solid rgba(45, 90, 63, 0.25);
-  box-shadow: 0 10px 25px rgba(30, 70, 48, 0.07);
+  box-shadow: 0 10px 25px rgba(30, 70, 48, 0.08);
   transition: all 0.4s ease;
   display: flex;
 }
@@ -124,11 +203,11 @@ body {
 .butterfly-card:hover {
   transform: translateY(-8px);
   border-color: var(--green-medium);
-  box-shadow: 0 15px 30px rgba(30, 70, 48, 0.15);
+  box-shadow: 0 15px 30px rgba(30, 70, 48, 0.18);
 }
 
 .card-inner {
-  border: 1px dashed rgba(139, 125, 75, 0.4); /* Traço sutil dourado/oliva */
+  border: 1px dashed rgba(139, 125, 75, 0.4);
   border-radius: 170px 10px 150px 15px / 15px 140px 15px 160px;
   padding: 30px 20px;
   text-align: center;
@@ -141,7 +220,6 @@ body {
 .card-icon {
   font-size: 2.2rem;
   margin-bottom: 12px;
-  filter: drop-shadow(0 2px 4px rgba(45, 90, 63, 0.15));
 }
 
 .butterfly-card h2 {
@@ -165,5 +243,5 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   color: var(--green-medium);
-  z-index: 1;
+  z-index: 2;
 }
