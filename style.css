@@ -1,10 +1,9 @@
-/* Variáveis de Cores inspiradas na Aquarela */
 :root {
   --bg-cream: #fbf8f1;
-  --green-dark: #1e4630;
-  --green-medium: #2d5a3f;
-  --green-watercolor: #3d7052;
-  --green-soft: #8eb09b;
+  --green-dark: #1b3d29;
+  --green-medium: #234e35;
+  --green-brush: #326343;
+  --green-soft: #7fa88d;
   --gold-accent: #8b7d4b;
   --text-color: #2b332c;
   --white-translucent: rgba(255, 255, 255, 0.88);
@@ -29,36 +28,34 @@ body {
   padding: 60px 20px;
 }
 
-/* Molduras de Aquarela nas Bordas */
-.watercolor-border {
+/* --- DETALHES DE PINCELADA VERDE NAS BORDAS --- */
+.brush-stroke {
   position: fixed;
   pointer-events: none;
   z-index: 0;
+  background: conic-gradient(from 180deg at 50% 50%, var(--green-dark), var(--green-brush), var(--green-soft), var(--green-dark));
+  filter: blur(20px);
+  opacity: 0.7;
 }
 
-.border-top-left {
-  top: -80px;
-  left: -80px;
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle, var(--green-dark) 0%, var(--green-watercolor) 45%, transparent 70%);
-  filter: blur(45px);
-  opacity: 0.55;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+.top-left-brush {
+  top: -120px;
+  left: -120px;
+  width: 450px;
+  height: 450px;
+  /* Formato irregular imitando pinceladas curvas de tintas */
+  clip-path: polygon(10% 0%, 100% 0%, 85% 35%, 65% 65%, 40% 90%, 0% 100%, 0% 30%);
 }
 
-.border-bottom-right {
-  bottom: -100px;
-  right: -100px;
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(circle, var(--green-medium) 0%, var(--green-soft) 50%, transparent 75%);
-  filter: blur(55px);
-  opacity: 0.6;
-  border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+.bottom-right-brush {
+  bottom: -140px;
+  right: -140px;
+  width: 480px;
+  height: 480px;
+  clip-path: polygon(30% 20%, 100% 0%, 100% 100%, 0% 100%, 15% 70%, 45% 50%);
 }
 
-/* Ilustrações de Ramos e Trepadeiras em SVG */
+/* Folhagens e Trepadeiras */
 .vine-decor {
   position: fixed;
   width: 220px;
@@ -68,76 +65,72 @@ body {
   opacity: 0.85;
 }
 
-.top-left-vine {
-  top: 10px;
-  left: 10px;
-}
+.top-left-vine { top: 10px; left: 10px; }
+.bottom-right-vine { bottom: 10px; right: 10px; }
 
-.bottom-right-vine {
-  bottom: 10px;
-  right: 10px;
-}
-
-/* --- ANIMAÇÃO DAS BORBOLETAS NAS BORDAS --- */
+/* --- ESTILO E ANIMAÇÃO DAS BORBOLETAS MODELO --- */
 .floating-butterfly {
   position: fixed;
-  font-size: 2.2rem;
+  width: 65px;
+  height: 65px;
   z-index: 2;
   pointer-events: none;
-  filter: drop-shadow(2px 4px 6px rgba(30, 70, 48, 0.3));
 }
 
-/* Borboleta 1: Canto Superior Esquerdo */
+.svg-butterfly {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(2px 5px 8px rgba(27, 61, 41, 0.35));
+}
+
+/* Posicionamento e Animações Rápidas nas Bordas */
 .b-1 {
-  top: 60px;
-  left: 50px;
-  animation: floatButterfly1 7s ease-in-out infinite alternate;
+  top: 50px;
+  left: 60px;
+  animation: float1 7s ease-in-out infinite alternate;
 }
 
-/* Borboleta 2: Canto Superior Direito */
 .b-2 {
-  top: 100px;
+  top: 90px;
   right: 70px;
-  animation: floatButterfly2 9s ease-in-out infinite alternate;
+  animation: float2 8.5s ease-in-out infinite alternate;
 }
 
-/* Borboleta 3: Canto Inferior Esquerdo */
 .b-3 {
   bottom: 120px;
-  left: 60px;
-  animation: floatButterfly3 8s ease-in-out infinite alternate;
+  left: 70px;
+  animation: float3 8s ease-in-out infinite alternate;
 }
 
-/* Borboleta 4: Canto Inferior Direito */
 .b-4 {
-  bottom: 70px;
-  right: 80px;
-  animation: floatButterfly4 6.5s ease-in-out infinite alternate;
+  bottom: 60px;
+  right: 90px;
+  animation: float4 6.5s ease-in-out infinite alternate;
 }
 
-/* Keyframes das Animações (Movimento de Voo e Bater de Asas) */
-@keyframes floatButterfly1 {
+/* Movimento de Voo */
+@keyframes float1 {
   0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-  50% { transform: translate(30px, 40px) rotate(15deg) scale(1.1); }
-  100% { transform: translate(-10px, 70px) rotate(-10deg) scale(0.95); }
+  50% { transform: translate(35px, 40px) rotate(18deg) scale(1.1); }
+  100% { transform: translate(-10px, 75px) rotate(-12deg) scale(0.95); }
 }
 
-@keyframes floatButterfly2 {
-  0% { transform: translate(0, 0) rotate(0deg) scale(0.9); }
-  50% { transform: translate(-40px, 30px) rotate(-20deg) scale(1.05); }
-  100% { transform: translate(-20px, 80px) rotate(10deg) scale(1); }
+@keyframes float2 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(0.95); }
+  50% { transform: translate(-40px, 30px) rotate(-22deg) scale(1.08); }
+  100% { transform: translate(-15px, 80px) rotate(12deg) scale(1); }
 }
 
-@keyframes floatButterfly3 {
+@keyframes float3 {
   0% { transform: translate(0, 0) rotate(5deg) scale(1.05); }
-  50% { transform: translate(50px, -30px) rotate(-15deg) scale(0.95); }
-  100% { transform: translate(20px, -60px) rotate(10deg) scale(1.1); }
+  50% { transform: translate(45px, -35px) rotate(-15deg) scale(0.95); }
+  100% { transform: translate(15px, -65px) rotate(10deg) scale(1.1); }
 }
 
-@keyframes floatButterfly4 {
+@keyframes float4 {
   0% { transform: translate(0, 0) rotate(-10deg) scale(1); }
   50% { transform: translate(-35px, -45px) rotate(15deg) scale(1.15); }
-  100% { transform: translate(-60px, -20px) rotate(-5deg) scale(0.9); }
+  100% { transform: translate(-55px, -20px) rotate(-5deg) scale(0.9); }
 }
 
 /* Cabeçalho */
@@ -147,10 +140,7 @@ body {
   z-index: 2;
 }
 
-.leaf-icon {
-  font-size: 1.8rem;
-  opacity: 0.8;
-}
+.leaf-icon { font-size: 1.8rem; opacity: 0.8; }
 
 .header h1 {
   font-family: 'Cormorant Garamond', serif;
@@ -175,7 +165,7 @@ body {
   margin: 15px auto 0 auto;
 }
 
-/* Cards / Blocos */
+/* Cards em Grid Flexbox */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -194,8 +184,8 @@ body {
   min-width: 280px;
   max-width: 330px;
   border-radius: 180px 15px 160px 20px / 20px 150px 20px 170px;
-  border: 1px solid rgba(45, 90, 63, 0.25);
-  box-shadow: 0 10px 25px rgba(30, 70, 48, 0.08);
+  border: 1px solid rgba(35, 78, 53, 0.25);
+  box-shadow: 0 10px 25px rgba(27, 61, 41, 0.08);
   transition: all 0.4s ease;
   display: flex;
 }
@@ -203,7 +193,7 @@ body {
 .butterfly-card:hover {
   transform: translateY(-8px);
   border-color: var(--green-medium);
-  box-shadow: 0 15px 30px rgba(30, 70, 48, 0.18);
+  box-shadow: 0 15px 30px rgba(27, 61, 41, 0.18);
 }
 
 .card-inner {
@@ -217,10 +207,7 @@ body {
   align-items: center;
 }
 
-.card-icon {
-  font-size: 2.2rem;
-  margin-bottom: 12px;
-}
+.card-icon { font-size: 2.2rem; margin-bottom: 12px; }
 
 .butterfly-card h2 {
   font-family: 'Cormorant Garamond', serif;
