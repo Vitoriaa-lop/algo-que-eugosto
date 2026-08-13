@@ -2,7 +2,6 @@
   --bg-cream: #f5efe6; /* Fundo Bege / Papel Vintage */
   --green-dark: #1b3d29;
   --green-medium: #234e35;
-  --green-brush: #326343;
   --green-soft: #7fa88d;
   --gold-accent: #8b7d4b;
   --text-color: #2b332c;
@@ -28,64 +27,66 @@ body {
   padding: 60px 20px;
 }
 
-/* --- MANCHAS DE PINCELADA EM AQUARELA --- */
+/* =========================================================
+   OPÇÃO 1: PINCELADAS DE AQUARELA SUAVES E TRANSLÚCIDAS
+   ========================================================= */
+
 .brush-stroke {
   position: fixed;
   pointer-events: none;
   z-index: 0;
-  mix-blend-mode: multiply;
 }
 
+/* Canto Superior Esquerdo - Sombra Esfumaçada e Leve */
 .top-left-brush {
-  top: -80px;
-  left: -80px;
-  width: 440px;
-  height: 440px;
-  background: 
-    radial-gradient(ellipse at 30% 30%, var(--green-dark) 0%, transparent 60%),
-    radial-gradient(ellipse at 60% 20%, var(--green-brush) 0%, transparent 65%),
-    radial-gradient(ellipse at 20% 60%, var(--green-medium) 0%, transparent 70%),
-    radial-gradient(ellipse at 50% 50%, var(--green-soft) 0%, transparent 75%);
-  filter: blur(14px) contrast(140%);
-  opacity: 0.75;
-  border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
-  transform: rotate(-15deg);
+  top: -60px;
+  left: -60px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(
+    circle at 30% 30%, 
+    rgba(127, 168, 141, 0.35) 0%, 
+    rgba(50, 99, 67, 0.18) 45%, 
+    transparent 70%
+  );
+  filter: blur(35px);
+  border-radius: 50% 40% 60% 30%;
 }
 
+/* Canto Inferior Direito - Mancha Suave e Clara */
 .bottom-right-brush {
-  bottom: -90px;
-  right: -90px;
-  width: 470px;
-  height: 470px;
-  background: 
-    radial-gradient(ellipse at 70% 70%, var(--green-dark) 0%, transparent 60%),
-    radial-gradient(ellipse at 40% 80%, var(--green-brush) 0%, transparent 65%),
-    radial-gradient(ellipse at 80% 40%, var(--green-medium) 0%, transparent 70%),
-    radial-gradient(ellipse at 50% 50%, var(--green-soft) 0%, transparent 75%);
-  filter: blur(14px) contrast(140%);
-  opacity: 0.75;
-  border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
-  transform: rotate(10deg);
+  bottom: -60px;
+  right: -60px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle at 70% 70%, 
+    rgba(127, 168, 141, 0.35) 0%, 
+    rgba(35, 78, 53, 0.15) 50%, 
+    transparent 75%
+  );
+  filter: blur(40px);
+  border-radius: 40% 60% 30% 70%;
 }
 
-/* --- ILUSTRAÇÕES DE CANTOS (RAMOS, FLORES E FOLHAGENS) --- */
+/* --- ILUSTRAÇÕES DE CANTOS (FLORES E GALHOS) --- */
 .corner-illustration {
   position: fixed;
-  width: 320px;
-  height: 320px;
+  width: 280px;
+  height: 280px;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .top-left-art { top: 0; left: 0; }
 .bottom-right-art { bottom: 0; right: 0; }
 
-/* --- BORBOLETAS DETALHADAS --- */
+/* --- BORBOLETAS FLUTUANTES --- */
 .floating-butterfly {
   position: fixed;
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 75px;
   z-index: 2;
   pointer-events: none;
 }
@@ -93,10 +94,9 @@ body {
 .svg-butterfly {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(3px 6px 10px rgba(15, 36, 24, 0.4));
+  filter: drop-shadow(2px 4px 6px rgba(27, 61, 41, 0.25));
 }
 
-/* Posições e Animação de Voo */
 .b-1 { top: 40px; left: 80px; animation: float1 7.5s ease-in-out infinite alternate; }
 .b-2 { top: 80px; right: 90px; animation: float2 9s ease-in-out infinite alternate; }
 .b-3 { bottom: 130px; left: 90px; animation: float3 8.5s ease-in-out infinite alternate; }
@@ -177,8 +177,8 @@ body {
   min-width: 280px;
   max-width: 330px;
   border-radius: 180px 15px 160px 20px / 20px 150px 20px 170px;
-  border: 1px solid rgba(35, 78, 53, 0.25);
-  box-shadow: 0 10px 25px rgba(27, 61, 41, 0.08);
+  border: 1px solid rgba(35, 78, 53, 0.2);
+  box-shadow: 0 10px 25px rgba(27, 61, 41, 0.05);
   transition: all 0.4s ease;
   display: flex;
 }
@@ -186,11 +186,11 @@ body {
 .butterfly-card:hover {
   transform: translateY(-8px);
   border-color: var(--green-medium);
-  box-shadow: 0 15px 30px rgba(27, 61, 41, 0.18);
+  box-shadow: 0 15px 30px rgba(27, 61, 41, 0.12);
 }
 
 .card-inner {
-  border: 1px dashed rgba(139, 125, 75, 0.4);
+  border: 1px dashed rgba(139, 125, 75, 0.35);
   border-radius: 170px 10px 150px 15px / 15px 140px 15px 160px;
   padding: 30px 20px;
   text-align: center;
