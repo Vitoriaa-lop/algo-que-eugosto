@@ -1,6 +1,5 @@
 :root {
-  /* 🎨 Fundo atualizado para Bege / Papel Vintage */
-  --bg-cream: #f5efe6; 
+  --bg-cream: #f5efe6; /* Fundo Bege / Papel Vintage */
   --green-dark: #1b3d29;
   --green-medium: #234e35;
   --green-brush: #326343;
@@ -18,7 +17,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: var(--bg-cream); /* Aplicação do Fundo Vintage */
+  background-color: var(--bg-cream);
   color: var(--text-color);
   min-height: 100vh;
   display: flex;
@@ -29,7 +28,7 @@ body {
   padding: 60px 20px;
 }
 
-/* --- PINCELADAS DE AQUARELA NAS BORDAS --- */
+/* --- MANCHAS DE PINCELADA EM AQUARELA --- */
 .brush-stroke {
   position: fixed;
   pointer-events: none;
@@ -40,37 +39,24 @@ body {
 .top-left-brush {
   top: -80px;
   left: -80px;
-  width: 420px;
-  height: 420px;
+  width: 440px;
+  height: 440px;
   background: 
     radial-gradient(ellipse at 30% 30%, var(--green-dark) 0%, transparent 60%),
     radial-gradient(ellipse at 60% 20%, var(--green-brush) 0%, transparent 65%),
     radial-gradient(ellipse at 20% 60%, var(--green-medium) 0%, transparent 70%),
     radial-gradient(ellipse at 50% 50%, var(--green-soft) 0%, transparent 75%);
-  filter: blur(12px) contrast(150%);
+  filter: blur(14px) contrast(140%);
   opacity: 0.75;
   border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
   transform: rotate(-15deg);
 }
 
-.top-left-brush::after {
-  content: '';
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, var(--green-dark) 0%, transparent 60%);
-  border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%;
-  filter: blur(8px);
-  opacity: 0.6;
-}
-
 .bottom-right-brush {
   bottom: -90px;
   right: -90px;
-  width: 450px;
-  height: 450px;
+  width: 470px;
+  height: 470px;
   background: 
     radial-gradient(ellipse at 70% 70%, var(--green-dark) 0%, transparent 60%),
     radial-gradient(ellipse at 40% 80%, var(--green-brush) 0%, transparent 65%),
@@ -82,24 +68,24 @@ body {
   transform: rotate(10deg);
 }
 
-/* Ramos SVG */
-.vine-decor {
+/* --- ILUSTRAÇÕES DE CANTOS (RAMOS, FLORES E FOLHAGENS) --- */
+.corner-illustration {
   position: fixed;
-  width: 220px;
-  height: 220px;
+  width: 320px;
+  height: 320px;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
-.top-left-vine { top: 10px; left: 10px; }
-.bottom-right-vine { bottom: 10px; right: 10px; }
+.top-left-art { top: 0; left: 0; }
+.bottom-right-art { bottom: 0; right: 0; }
 
-/* --- BORBOLETAS FLUTUANTES --- */
+/* --- BORBOLETAS DETALHADAS --- */
 .floating-butterfly {
   position: fixed;
-  width: 65px;
-  height: 65px;
+  width: 80px;
+  height: 80px;
   z-index: 2;
   pointer-events: none;
 }
@@ -107,17 +93,18 @@ body {
 .svg-butterfly {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(2px 5px 8px rgba(27, 61, 41, 0.35));
+  filter: drop-shadow(3px 6px 10px rgba(15, 36, 24, 0.4));
 }
 
-.b-1 { top: 50px; left: 60px; animation: float1 7s ease-in-out infinite alternate; }
-.b-2 { top: 90px; right: 70px; animation: float2 8.5s ease-in-out infinite alternate; }
-.b-3 { bottom: 120px; left: 70px; animation: float3 8s ease-in-out infinite alternate; }
-.b-4 { bottom: 60px; right: 90px; animation: float4 6.5s ease-in-out infinite alternate; }
+/* Posições e Animação de Voo */
+.b-1 { top: 40px; left: 80px; animation: float1 7.5s ease-in-out infinite alternate; }
+.b-2 { top: 80px; right: 90px; animation: float2 9s ease-in-out infinite alternate; }
+.b-3 { bottom: 130px; left: 90px; animation: float3 8.5s ease-in-out infinite alternate; }
+.b-4 { bottom: 50px; right: 100px; animation: float4 7s ease-in-out infinite alternate; }
 
 @keyframes float1 {
   0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-  50% { transform: translate(35px, 40px) rotate(18deg) scale(1.1); }
+  50% { transform: translate(35px, 40px) rotate(18deg) scale(1.08); }
   100% { transform: translate(-10px, 75px) rotate(-12deg) scale(0.95); }
 }
 
@@ -135,7 +122,7 @@ body {
 
 @keyframes float4 {
   0% { transform: translate(0, 0) rotate(-10deg) scale(1); }
-  50% { transform: translate(-35px, -45px) rotate(15deg) scale(1.15); }
+  50% { transform: translate(-35px, -45px) rotate(15deg) scale(1.12); }
   100% { transform: translate(-55px, -20px) rotate(-5deg) scale(0.9); }
 }
 
@@ -171,7 +158,7 @@ body {
   margin: 15px auto 0 auto;
 }
 
-/* Grid de Cards */
+/* Cards */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
