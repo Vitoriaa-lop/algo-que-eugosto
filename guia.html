@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Espécies de Borboletas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    .guia-container {
+      max-width: 1000px;
+      margin: 20px auto;
+      z-index: 2;
+    }
+    .guia-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .especie-card {
+      background: var(--white-translucent);
+      border-radius: 15px;
+      padding: 20px;
+      border: 1px solid rgba(35, 78, 53, 0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .especie-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    .especie-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--green-dark);
+      margin: 15px 0 10px 0;
+    }
+    .info-item {
+      font-size: 0.9rem;
+      text-align: left;
+      margin-bottom: 8px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background: var(--green-dark);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="guia-container">
+    <a href="index.html" class="back-btn">&larr; Voltar ao Início</a>
+    
+    <header class="header">
+      <h1>Guia de Espécies</h1>
+      <p class="subtitle">Conheça algumas das borboletas mais fascinantes da natureza</p>
+    </header>
+
+    <div class="guia-grid">
+
+      <div class="especie-card">
+        <img src="img/Borboleta-Azul-Morpho.png" alt="Borboleta Azul Morpho">
+        <h2>Borboleta Azul Morpho</h2>
+        <p class="info-item"><strong>📍 Onde encontrar:</strong> Florestas tropicais da América do Sul e Central.</p>
+        <p class="info-item"><strong>✨ Curiosidade:</strong> O tom azul não vem de pigmentos, mas da luz refletida em suas escamas microscópicas.</p>
+      </div>
+
+      <div class="especie-card">
+        <img src="img/Borboleta-Monarca.jpg" alt="Borboleta Monarca">
+        <h2>Borboleta Monarca</h2>
+        <p class="info-item"><strong>📍 Onde encontrar:</strong> América do Norte (famosas por migrarem até o México).</p>
+        <p class="info-item"><strong>✨ Curiosidade:</strong> Elas viajam milhares de quilômetros todo ano durante a mudança de estação.</p>
+      </div>
+
+      <div class="especie-card">
+        <img src="img/Borboleta-Olho-de-Coruja.jpg" alt="Borboleta Olho de Coruja">
+        <h2>Borboleta Olho de Coruja</h2>
+        <p class="info-item"><strong>📍 Onde encontrar:</strong> Florestas da América do Sul e Central.</p>
+        <p class="info-item"><strong>✨ Curiosidade:</strong> Possui um desenho nas asas parecido com o olho de uma coruja para assustar predadores.</p>
+      </div>
+
+      <div class="especie-card">
+        <img src="img/Borboleta-Asa-de-Vidro.png" alt="Borboleta Asa de Vidro">
+        <h2>Borboleta Asa de Vidro</h2>
+        <p class="info-item"><strong>📍 Onde encontrar:</strong> América Central e América do Sul.</p>
+        <p class="info-item"><strong>✨ Curiosidade:</strong> Suas asas são quase completamente transparentes, ajudando-as a se camuflar no ar.</p>
+      </div>
+
+      <div class="especie-card">
+        <img src="img/Borboleta-Smaragdina.png" alt="Borboleta Smaragdina">
+        <h2>Borboleta Smaragdina</h2>
+        <p class="info-item"><strong>📍 Onde encontrar:</strong> Regiões tropicais e florestas densas.</p>
+        <p class="info-item"><strong>✨ Curiosidade:</strong> Se destacam pela tonalidade verde-esmeralda vibrante nas asas.</p>
+      </div>
+
+      <div class="especie-card">
+        <img src="img/Borboleta-Folha-Seca.png" alt="Borboleta Folha Seca">
+        <h2>Borboleta Folha Seca</h2>
+        <p class="info-item"><strong>📍 Onde encontrar:</strong> Ásia tropical e florestas tropicais.</p>
+        <p class="info-item"><strong>✨ Curiosidade:</strong> Com as asas fechadas, parece perfeitamente uma folha seca caindo de uma árvore.</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

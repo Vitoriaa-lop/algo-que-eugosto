@@ -26,7 +26,6 @@ body {
   padding: 60px 20px;
 }
 
-/* FUNDOS DE MANCHA TRANSLÚCIDAS */
 .brush-stroke {
   position: fixed;
   pointer-events: none;
@@ -51,7 +50,6 @@ body {
   filter: blur(40px);
 }
 
-/* IMAGENS DOS GIRASSÓIS / FOLHAGENS GRANDES */
 .realistic-foliage {
   position: fixed;
   pointer-events: none;
@@ -65,7 +63,6 @@ body {
 .top-left-foliage { top: -20px; left: -20px; }
 .bottom-right-foliage { bottom: -20px; right: -20px; }
 
-/* BORBOLETAS FLUTUANTES */
 .floating-butterfly {
   position: fixed;
   width: 85px;
@@ -90,14 +87,12 @@ body {
 @keyframes float3 { 0% { transform: translate(0, 0) rotate(5deg); } 50% { transform: translate(40px, -30px) rotate(-12deg); } 100% { transform: translate(10px, -55px) rotate(8deg); } }
 @keyframes float4 { 0% { transform: translate(0, 0) rotate(-8deg); } 50% { transform: translate(-30px, -40px) rotate(12deg); } 100% { transform: translate(-45px, -15px) rotate(-4deg); } }
 
-/* CABEÇALHO */
 .header { text-align: center; margin-bottom: 50px; z-index: 2; }
 .leaf-icon { font-size: 1.8rem; opacity: 0.8; }
 .header h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; font-weight: 600; color: var(--green-dark); letter-spacing: 3px; }
 .header .subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--green-medium); }
 .divider { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold-accent), transparent); margin: 15px auto 0 auto; }
 
-/* GRID DE BLOCOS DE AÇÃO */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -165,41 +160,4 @@ body {
   color: #ffffff;
 }
 
-/* MODAL DE AÇÃO EM JAVASCRIPT */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
-  backdrop-filter: blur(4px);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background-color: var(--bg-cream);
-  padding: 30px;
-  border-radius: 15px;
-  border: 1px solid var(--green-medium);
-  text-align: center;
-  position: relative;
-  max-width: 400px;
-  width: 80%;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--green-dark);
-}
-
-/* RODAPÉ */
 .footer { margin-top: 60px; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--green-medium); z-index: 2; }
