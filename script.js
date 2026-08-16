@@ -1,4 +1,3 @@
-// Função para abrir o guia em nova aba com estilo refinado
 function abrirGuiaEmNovaAba() {
   const novaAba = window.open('', '_blank');
   
@@ -29,13 +28,42 @@ function abrirGuiaEmNovaAba() {
       <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
       <style>
         body {
-          padding: 40px 20px;
+          padding: 120px 20px 40px 20px;
           background-color: #f5efe6;
+          background-image: url('img/download.jpg');
+          background-repeat: repeat-y;
+          background-size: 100% auto;
+          background-position: top center;
+          position: relative;
+        }
+
+        /* Galho decorativo no topo */
+        .decoracao-galho {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          max-width: 1200px;
+          height: auto;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .guia-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 2;
         }
 
         .guia-header {
           text-align: center;
           margin-bottom: 40px;
+          background: rgba(245, 239, 230, 0.85);
+          padding: 20px;
+          border-radius: 15px;
+          backdrop-filter: blur(5px);
         }
 
         .guia-header h1 {
@@ -52,13 +80,6 @@ function abrirGuiaEmNovaAba() {
           color: #234e35;
         }
 
-        .guia-container {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-          z-index: 2;
-        }
-
         .guia-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -66,7 +87,7 @@ function abrirGuiaEmNovaAba() {
         }
 
         .especie-card {
-          background: rgba(255, 255, 255, 0.9);
+          background: rgba(255, 255, 255, 0.92);
           border-radius: 20px;
           overflow: hidden;
           border: 1px solid rgba(35, 78, 53, 0.15);
@@ -152,6 +173,8 @@ function abrirGuiaEmNovaAba() {
       </style>
     </head>
     <body>
+      <img src="img/galho.png" class="decoracao-galho" alt="Galho decorativo">
+
       <div class="guia-container">
         <div class="top-bar">
           <button class="back-btn" onclick="window.close()">&larr; Fechar Aba</button>
