@@ -26,6 +26,7 @@ body {
   padding: 60px 20px;
 }
 
+/* Pinceladas de fundo */
 .brush-stroke {
   position: fixed;
   pointer-events: none;
@@ -50,6 +51,7 @@ body {
   filter: blur(40px);
 }
 
+/* Folhagens dos cantos */
 .realistic-foliage {
   position: fixed;
   pointer-events: none;
@@ -63,9 +65,10 @@ body {
 .top-left-foliage { top: -20px; left: -20px; }
 .bottom-right-foliage { bottom: -20px; right: -20px; }
 
+/* Borboletas azuis flutuantes */
 .floating-butterfly {
   position: fixed;
-  width: 85px;
+  width: 80px;
   height: auto;
   z-index: 2;
   pointer-events: none;
@@ -77,22 +80,24 @@ body {
   filter: drop-shadow(2px 5px 8px rgba(0, 0, 0, 0.25));
 }
 
-.b-1 { top: 50px; left: 90px; animation: float1 7.5s ease-in-out infinite alternate; }
-.b-2 { top: 90px; right: 100px; animation: float2 9s ease-in-out infinite alternate; }
-.b-3 { bottom: 140px; left: 100px; animation: float3 8.5s ease-in-out infinite alternate; }
-.b-4 { bottom: 60px; right: 110px; animation: float4 7s ease-in-out infinite alternate; }
+.b-1 { top: 60px; left: 80px; animation: float1 7.5s ease-in-out infinite alternate; }
+.b-2 { top: 100px; right: 90px; animation: float2 9s ease-in-out infinite alternate; }
+.b-3 { bottom: 120px; left: 90px; animation: float3 8.5s ease-in-out infinite alternate; }
+.b-4 { bottom: 70px; right: 100px; animation: float4 7s ease-in-out infinite alternate; }
 
 @keyframes float1 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(30px, 35px) rotate(15deg); } 100% { transform: translate(-10px, 60px) rotate(-10deg); } }
 @keyframes float2 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-35px, 25px) rotate(-18deg); } 100% { transform: translate(-15px, 70px) rotate(10deg); } }
 @keyframes float3 { 0% { transform: translate(0, 0) rotate(5deg); } 50% { transform: translate(40px, -30px) rotate(-12deg); } 100% { transform: translate(10px, -55px) rotate(8deg); } }
 @keyframes float4 { 0% { transform: translate(0, 0) rotate(-8deg); } 50% { transform: translate(-30px, -40px) rotate(12deg); } 100% { transform: translate(-45px, -15px) rotate(-4deg); } }
 
+/* Cabeçalho */
 .header { text-align: center; margin-bottom: 50px; z-index: 2; }
 .leaf-icon { font-size: 1.8rem; opacity: 0.8; }
 .header h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; font-weight: 600; color: var(--green-dark); letter-spacing: 3px; }
 .header .subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--green-medium); }
 .divider { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold-accent), transparent); margin: 15px auto 0 auto; }
 
+/* Grid principal */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
