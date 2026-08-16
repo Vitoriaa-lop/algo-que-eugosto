@@ -26,10 +26,7 @@ body {
   padding: 60px 20px;
 }
 
-/* =========================================================
-   FUNDOS DE MANCHA TRANSLÚCIDAS (AQUARELA SUAVE)
-   ========================================================= */
-
+/* FUNDOS DE MANCHA TRANSLÚCIDAS */
 .brush-stroke {
   position: fixed;
   pointer-events: none;
@@ -41,14 +38,8 @@ body {
   left: -60px;
   width: 450px;
   height: 450px;
-  background: radial-gradient(
-    circle at 30% 30%, 
-    rgba(127, 168, 141, 0.3) 0%, 
-    rgba(50, 99, 67, 0.12) 45%, 
-    transparent 70%
-  );
+  background: radial-gradient(circle at 30% 30%, rgba(127, 168, 141, 0.3) 0%, transparent 70%);
   filter: blur(35px);
-  border-radius: 50% 40% 60% 30%;
 }
 
 .bottom-right-brush {
@@ -56,44 +47,25 @@ body {
   right: -60px;
   width: 450px;
   height: 450px;
-  background: radial-gradient(
-    circle at 70% 70%, 
-    rgba(127, 168, 141, 0.3) 0%, 
-    rgba(35, 78, 53, 0.1) 50%, 
-    transparent 75%
-  );
+  background: radial-gradient(circle at 70% 70%, rgba(127, 168, 141, 0.3) 0%, transparent 75%);
   filter: blur(40px);
-  border-radius: 40% 60% 30% 70%;
 }
 
-/* =========================================================
-   IMAGENS DOS GIRASSÓIS / FOLHAGENS (TAMANHO MAIOR)
-   ========================================================= */
-
+/* IMAGENS DOS GIRASSÓIS / FOLHAGENS GRANDES */
 .realistic-foliage {
   position: fixed;
   pointer-events: none;
   z-index: 1;
-  max-width: 500px; /* Aumentado para dar destaque aos girassóis */
+  max-width: 500px;
   width: 100%;
   height: auto;
   filter: drop-shadow(4px 8px 12px rgba(27, 61, 41, 0.15));
 }
 
-.top-left-foliage {
-  top: -20px;
-  left: -20px;
-}
+.top-left-foliage { top: -20px; left: -20px; }
+.bottom-right-foliage { bottom: -20px; right: -20px; }
 
-.bottom-right-foliage {
-  bottom: -20px;
-  right: -20px;
-}
-
-/* =========================================================
-   BORBOLETAS FLUTUANTES
-   ========================================================= */
-
+/* BORBOLETAS FLUTUANTES */
 .floating-butterfly {
   position: fixed;
   width: 85px;
@@ -113,69 +85,19 @@ body {
 .b-3 { bottom: 140px; left: 100px; animation: float3 8.5s ease-in-out infinite alternate; }
 .b-4 { bottom: 60px; right: 110px; animation: float4 7s ease-in-out infinite alternate; }
 
-@keyframes float1 {
-  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-  50% { transform: translate(30px, 35px) rotate(15deg) scale(1.05); }
-  100% { transform: translate(-10px, 60px) rotate(-10deg) scale(0.95); }
-}
+@keyframes float1 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(30px, 35px) rotate(15deg); } 100% { transform: translate(-10px, 60px) rotate(-10deg); } }
+@keyframes float2 { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-35px, 25px) rotate(-18deg); } 100% { transform: translate(-15px, 70px) rotate(10deg); } }
+@keyframes float3 { 0% { transform: translate(0, 0) rotate(5deg); } 50% { transform: translate(40px, -30px) rotate(-12deg); } 100% { transform: translate(10px, -55px) rotate(8deg); } }
+@keyframes float4 { 0% { transform: translate(0, 0) rotate(-8deg); } 50% { transform: translate(-30px, -40px) rotate(12deg); } 100% { transform: translate(-45px, -15px) rotate(-4deg); } }
 
-@keyframes float2 {
-  0% { transform: translate(0, 0) rotate(0deg) scale(0.95); }
-  50% { transform: translate(-35px, 25px) rotate(-18deg) scale(1.08); }
-  100% { transform: translate(-15px, 70px) rotate(10deg) scale(1); }
-}
-
-@keyframes float3 {
-  0% { transform: translate(0, 0) rotate(5deg) scale(1.02); }
-  50% { transform: translate(40px, -30px) rotate(-12deg) scale(0.95); }
-  100% { transform: translate(10px, -55px) rotate(8deg) scale(1.05); }
-}
-
-@keyframes float4 {
-  0% { transform: translate(0, 0) rotate(-8deg) scale(1); }
-  50% { transform: translate(-30px, -40px) rotate(12deg) scale(1.1); }
-  100% { transform: translate(-45px, -15px) rotate(-4deg) scale(0.9); }
-}
-
-/* =========================================================
-   CABEÇALHO
-   ========================================================= */
-
-.header {
-  text-align: center;
-  margin-bottom: 50px;
-  z-index: 2;
-}
-
+/* CABEÇALHO */
+.header { text-align: center; margin-bottom: 50px; z-index: 2; }
 .leaf-icon { font-size: 1.8rem; opacity: 0.8; }
+.header h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; font-weight: 600; color: var(--green-dark); letter-spacing: 3px; }
+.header .subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--green-medium); }
+.divider { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold-accent), transparent); margin: 15px auto 0 auto; }
 
-.header h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.8rem;
-  font-weight: 600;
-  color: var(--green-dark);
-  letter-spacing: 3px;
-  margin: 5px 0;
-}
-
-.header .subtitle {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.3rem;
-  color: var(--green-medium);
-}
-
-.divider {
-  width: 80px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
-  margin: 15px auto 0 auto;
-}
-
-/* =========================================================
-   GRID DE CARDS
-   ========================================================= */
-
+/* GRID DE BLOCOS DE AÇÃO */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -186,7 +108,7 @@ body {
   z-index: 2;
 }
 
-.butterfly-card {
+.action-card {
   background: var(--white-translucent);
   backdrop-filter: blur(6px);
   padding: 6px;
@@ -197,13 +119,14 @@ body {
   border: 1px solid rgba(35, 78, 53, 0.2);
   box-shadow: 0 10px 25px rgba(27, 61, 41, 0.05);
   transition: all 0.4s ease;
+  cursor: pointer;
   display: flex;
 }
 
-.butterfly-card:hover {
-  transform: translateY(-8px);
+.action-card:hover {
+  transform: translateY(-8px) scale(1.02);
   border-color: var(--green-medium);
-  box-shadow: 0 15px 30px rgba(27, 61, 41, 0.12);
+  box-shadow: 0 15px 30px rgba(27, 61, 41, 0.15);
 }
 
 .card-inner {
@@ -218,30 +141,65 @@ body {
 }
 
 .card-icon { font-size: 2.2rem; margin-bottom: 12px; }
+.action-card h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--green-dark); margin-bottom: 10px; }
+.action-card p { font-size: 0.88rem; line-height: 1.6; color: #4a554d; font-weight: 300; }
 
-.butterfly-card h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+.card-btn {
+  margin-top: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   color: var(--green-dark);
-  margin-bottom: 10px;
+  background-color: rgba(127, 168, 141, 0.25);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.butterfly-card p {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: #4a554d;
-  font-weight: 300;
+.action-card:hover .card-btn {
+  background-color: var(--green-dark);
+  color: #ffffff;
 }
 
-/* =========================================================
-   RODAPÉ
-   ========================================================= */
-
-.footer {
-  margin-top: 60px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--green-medium);
-  z-index: 2;
+/* MODAL DE AÇÃO EM JAVASCRIPT */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
 }
+
+.modal-content {
+  background-color: var(--bg-cream);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid var(--green-medium);
+  text-align: center;
+  position: relative;
+  max-width: 400px;
+  width: 80%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--green-dark);
+}
+
+/* RODAPÉ */
+.footer { margin-top: 60px; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--green-medium); z-index: 2; }

@@ -41,55 +41,72 @@
     <div class="divider"></div>
   </header>
 
-  <!-- Container Principal -->
+  <!-- Container Principal de Blocos de Ação -->
   <main class="gallery-container">
 
-    <article class="butterfly-card">
+    <div class="butterfly-card action-card" data-secao="Guia de Espécies">
       <div class="card-inner">
         <div class="card-icon">📖</div>
         <h2>Guia de Espécies</h2>
         <p>Explore as características, cores e habitats das mais diversas espécies do mundo.</p>
+        <button class="card-btn">Acessar Guia &rarr;</button>
       </div>
-    </article>
+    </div>
 
-    <article class="butterfly-card">
+    <div class="butterfly-card action-card" data-secao="Galeria de Fotos">
       <div class="card-inner">
         <div class="card-icon">🖼️</div>
         <h2>Galeria de Fotos</h2>
         <p>Uma coleção visual delicada com registros fotográficos e aquarelas em detalhes.</p>
+        <button class="card-btn">Ver Galeria &rarr;</button>
       </div>
-    </article>
+    </div>
 
-    <article class="butterfly-card">
+    <div class="butterfly-card action-card" data-secao="Ciclo de Vida">
       <div class="card-inner">
         <div class="card-icon">🔄</div>
         <h2>Ciclo de Vida</h2>
         <p>Acompanhe a transformação mágica: do ovo à lagarta, crisálida e a borboleta adulta.</p>
+        <button class="card-btn">Descobrir &rarr;</button>
       </div>
-    </article>
+    </div>
 
-    <article class="butterfly-card">
+    <div class="butterfly-card action-card" data-secao="Como Atrair">
       <div class="card-inner">
         <div class="card-icon">🌸</div>
         <h2>Como Atrair</h2>
         <p>Dicas de plantas, flores nativas e cuidados para criar um jardim receptivo para elas.</p>
+        <button class="card-btn">Aprender Dicas &rarr;</button>
       </div>
-    </article>
+    </div>
 
-    <article class="butterfly-card">
+    <div class="butterfly-card action-card" data-secao="Curiosidades">
       <div class="card-inner">
         <div class="card-icon">✨</div>
         <h2>Curiosidades</h2>
         <p>Fatos surpreendentes sobre a visão, alimentação e migração desses incríveis insetos.</p>
+        <button class="card-btn">Ler Fatos &rarr;</button>
       </div>
-    </article>
+    </div>
 
   </main>
+
+  <!-- Modal / Janela de Alerta ao Clicar -->
+  <div id="modal-acao" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 id="modal-titulo">Título</h3>
+      <p id="modal-texto">Você abriu esta seção!</p>
+    </div>
+  </div>
 
   <!-- Rodapé -->
   <footer class="footer">
     <p>🍃 Asas e Cores — Ilustração & Natureza 🍃</p>
   </footer>
+
+  <!-- Importação do arquivo JavaScript -->
+  <script src="script.js"></script>
 
 </body>
 </html>
