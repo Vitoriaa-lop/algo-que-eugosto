@@ -1,5 +1,5 @@
 :root {
-  --bg-cream: #f5efe6; /* Fundo Bege / Papel Vintage */
+  --bg-cream: #f5efe6;
   --green-dark: #1b3d29;
   --green-medium: #234e35;
   --gold-accent: #8b7d4b;
@@ -27,7 +27,7 @@ body {
 }
 
 /* =========================================================
-   FUNDOS DE MANCHA TRANSLÚCIDAS (OPÇÃO 1 - AQUARELA SUAVE)
+   FUNDOS DE MANCHA TRANSLÚCIDAS (AQUARELA SUAVE)
    ========================================================= */
 
 .brush-stroke {
@@ -39,8 +39,8 @@ body {
 .top-left-brush {
   top: -60px;
   left: -60px;
-  width: 380px;
-  height: 380px;
+  width: 450px;
+  height: 450px;
   background: radial-gradient(
     circle at 30% 30%, 
     rgba(127, 168, 141, 0.3) 0%, 
@@ -54,8 +54,8 @@ body {
 .bottom-right-brush {
   bottom: -60px;
   right: -60px;
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
   background: radial-gradient(
     circle at 70% 70%, 
     rgba(127, 168, 141, 0.3) 0%, 
@@ -67,30 +67,31 @@ body {
 }
 
 /* =========================================================
-   IMAGENS DE FOLHAGEM REALISTA
+   IMAGENS DOS GIRASSÓIS / FOLHAGENS (TAMANHO MAIOR)
    ========================================================= */
 
 .realistic-foliage {
   position: fixed;
   pointer-events: none;
   z-index: 1;
-  max-width: 320px;
+  max-width: 500px; /* Aumentado para dar destaque aos girassóis */
+  width: 100%;
   height: auto;
   filter: drop-shadow(4px 8px 12px rgba(27, 61, 41, 0.15));
 }
 
 .top-left-foliage {
-  top: 0;
-  left: 0;
+  top: -20px;
+  left: -20px;
 }
 
 .bottom-right-foliage {
-  bottom: 0;
-  right: 0;
+  bottom: -20px;
+  right: -20px;
 }
 
 /* =========================================================
-   BORBOLETAS REALISTAS FLUTUANTES
+   BORBOLETAS FLUTUANTES
    ========================================================= */
 
 .floating-butterfly {
