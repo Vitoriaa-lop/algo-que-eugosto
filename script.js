@@ -1,4 +1,4 @@
-// Dados completos das espécies
+// Dados das borboletas para abrir dinamicamente no Guia de Espécies
 const especies = [
   {
     nome: "Borboleta-Monarca",
@@ -44,7 +44,7 @@ const especies = [
   }
 ];
 
-// Captura de eventos dos cards
+// Clique nos cards
 const cards = document.querySelectorAll('.action-card');
 
 cards.forEach(card => {
@@ -59,7 +59,7 @@ cards.forEach(card => {
   });
 });
 
-// Gera o conteúdo completo do guia na nova aba
+// Função para abrir o guia em nova aba
 function abrirGuiaEmNovaAba() {
   const novaAba = window.open('', '_blank');
   
