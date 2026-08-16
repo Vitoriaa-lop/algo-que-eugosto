@@ -14,7 +14,7 @@ const especies = [
   },
   {
     nome: "Borboleta-Olho-de-Coruja",
-    imagem: "img/Borboleta-Olho-de-Coruja.jpg",
+    imagem: "img/Borboleta-Olho-de-Coruja.png", // <--- Corrigido para .png!
     ondeEncontrar: "Florestas tropicais úmidas e bananais da América Central e do Sul.",
     curiosidade: "É uma das maiores borboletas das Américas. A parte inferior de suas asas apresenta mancha redonda similar aos olhos de uma coruja ou sapo, recurso de mimetismo usado para assustar pequenos predadores como pássaros."
   },
